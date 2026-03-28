@@ -197,9 +197,9 @@ for _ in range(N_SIMS):
         bal *= MULT_HEADS if np.random.random() < P_HEADS else MULT_TAILS
     finals_original.append(bal)
 finals_original = np.array(finals_original)
-mean_final = np.mean(finals_original)
-median_final = np.median(finals_original)
-prob_above_30k = np.mean(finals_original > BUY_IN)
+mean_final = float(np.mean(finals_original))
+median_final = float(np.median(finals_original))
+prob_above_30k = float(np.mean(finals_original > BUY_IN))
 
 fig3, ax3 = plt.subplots(figsize=(8, 4))
 ax3.hist(finals_original, bins=25, color="steelblue", edgecolor="white", alpha=0.85)
@@ -242,9 +242,9 @@ for _ in range(N_SIMS):
         bal *= MULT_H_25 if np.random.random() < P_HEADS else MULT_T_25
     finals_25.append(bal)
 finals_25 = np.array(finals_25)
-mean_25 = np.mean(finals_25)
-median_25 = np.median(finals_25)
-prob_above_30k_25 = np.mean(finals_25 > BUY_IN)
+mean_25 = float(np.mean(finals_25))
+median_25 = float(np.median(finals_25))
+prob_above_30k_25 = float(np.mean(finals_25 > BUY_IN))
 
 fig5, ax5 = plt.subplots(figsize=(8, 4))
 ax5.hist(finals_original, bins=25, alpha=0.6, color="steelblue", label="Original (100% at risk)", density=True)
